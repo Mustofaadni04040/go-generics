@@ -35,3 +35,16 @@ func TestMutipleParameter(t *testing.T) {
 	MultipeParameter[string, int]("Belajar Golang Generics", 10)
 	MultipeParameter[int, string](100, "Belajar Golang Generics")
 }
+
+func isSame[T comparable](value1 T, value2 T) bool {
+	if value1 == value2 {
+		return true
+	} else {
+		return false
+	}
+}
+
+func TestIsSame(t *testing.T) {
+	assert.True(t, isSame[string]("Mustofa", "Mustofa"))
+	assert.True(t, isSame[int](10, 10))
+}
